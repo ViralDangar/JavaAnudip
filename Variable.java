@@ -1,8 +1,11 @@
+// Name=Viral Raja Dangar
+// batch=C2533
+
 public class Variable {
     public static void main(String args[])
         {
             int in;//Instance Variable Inside Class outside Method
-            int c=5;//Instance Variable  
+            int c=5;//Instance Variable
             System.out.println("Instance Variable=" +c);
 
             public void case()
