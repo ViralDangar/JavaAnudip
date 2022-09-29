@@ -1,0 +1,60 @@
+// name=viral Dangar
+// Create an package anudip to store bank customer and access in anudip 2 package
+package anudip;
+
+public class Bankcustomer {
+    String accname;
+    int accno;
+    double balance;
+    public void show(String accname,int accno , double balance){
+        this.accname=accname;  // this keyword is used to refer only this variable without change name
+       this.accno=accno;
+       this.balance=balance;
+       System.out.println("Account holder name is: "+accname+" \n Your Phone number is:" +accno+" \n Your account balance is: "+balance);
+    }
+    public void withdraw(double balance,int withamt){  // remaining balance
+              if(withamt<balance) {                          // if statment is for insufficient balance
+                  double Rembal = balance - withamt;
+                  System.out.println("Your Account balance after Withdrawing " + Rembal);
+              }
+              else {
+                  System.out.println("You have insufficient balance");
+              }
+
+        }
+}
+
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Second Package
+
+// name=viral Dangar
+// Create an package anudip to store bank customer and access in anudip 2 package
+package anudip2;
+import anudip.Bankcustomer;
+
+import java.util.Scanner;
+
+public class Bank {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);  // Take a user input
+        String a;    // aAccount holder name
+        int b;   // Phone number is
+        double c;   // balance
+        int withamt;
+        System.out.println("Enter Your Name :");
+        a= sc.next();   // taking user input
+        System.out.println("Enter Your Account number:");
+        b= sc.nextInt();  // taking user input
+        System.out.println("Enter your balance:");
+        c= sc.nextDouble(); // taking user input
+        Bankcustomer B=new Bankcustomer();
+        B.show(a,b,c);                // calling show method from anudip package
+        System.out.println("Enter Withdraw amount: ");
+        withamt=sc.nextInt();  // taking withdrwan amount from user
+        B.withdraw(c,withamt);  // calling withdraw method from anudip package
+
+
+    }
+}
