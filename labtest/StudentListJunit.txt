@@ -1,0 +1,45 @@
+//prepare Junit test case with  Students collection List?
+//Viral Dangar
+import java.util.ArrayList;
+import java.util.List;
+
+public class Student {
+     List<String> stu=new ArrayList<String>();
+
+    public void add(String name)
+    {
+        stu.add(name);
+    }
+    public void remove(String name)
+    {
+        stu.remove(name);
+    }
+
+    public int count() {     // creating this for counting student adding and reomving in int type
+        return stu.size();
+    }
+}
+--------------------------------------------------------------
+Testing file
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class StudentTest {
+       Student stu1=new Student();
+    @Test
+    void add() {
+     stu1.add("viral");
+     stu1.add("hello");
+     stu1.add("world");
+     assertEquals(3,stu1.count());
+    }
+
+    @Test
+    void remove() {
+        stu1.add("hello");
+        stu1.add("world");
+        stu1.remove("hello");
+        assertEquals(1,stu1.count());
+    }
+}
