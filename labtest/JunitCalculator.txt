@@ -1,0 +1,57 @@
+// Viral Dangar
+// Create Calculator class with add,sub,mult,div and prepare junit test cases with AssertEquals?
+public class Calculator {
+         public static int add(int n1,int n2)
+         {
+             return n1+n2;
+         }
+    public static int sub(int n1,int n2)
+    {
+        return n1-n2;
+    }
+    public static int mul(int n1,int n2)
+    {
+        return n1*n2;
+    }
+    public static double div(double n1,double n2)
+    {
+        return n1%n2;
+    }
+
+}
+
+------------------------------------------------------------------------
+TestClass
+
+
+import org.junit.jupiter.api.Test;
+import org.testng.Assert;
+
+
+class CalculatorTest {
+
+    @Test
+    void add() {
+        Assert.assertEquals(5,Calculator.add(3,2));
+    }
+
+    @Test
+    void sub() {
+        Assert.assertEquals(2,Calculator.sub(4,2));
+    }
+
+    @Test
+    void mul() {
+        Assert.assertEquals(50,Calculator.mul(5,10));
+    }
+
+    @Test
+    void div()
+    {
+        Assert.assertEquals(0,Calculator.div(5,5));
+    }
+
+}
+
+
+
